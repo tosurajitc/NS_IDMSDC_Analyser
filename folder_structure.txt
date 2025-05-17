@@ -1,0 +1,22 @@
+idms-analyzer/
+├── .env                     # API keys and configuration
+├── requirements.txt         # Dependencies
+├── README.md                # Documentation
+├── app.py                   # Main Streamlit application
+├── utils/
+│   ├── __init__.py
+│   ├── llm_utils.py         # LLM API interactions
+│   ├── file_utils.py        # File handling (upload/download)
+│   ├── docx_generator.py    # Convert markdown to .doc format
+│   └── prompt_templates.py  # Prompts for different LLM operations
+├── models/
+│   └── business_logic.py    # Structure for business logic data
+├── components/
+│   ├── __init__.py
+│   ├── file_uploader.py     # File upload component
+│   ├── logic_extractor.py   # Extract business logic
+│   ├── logic_validator.py   # UI for validating logic
+│   ├── test_generator.py    # Generate test scripts
+│   └── doc_exporter.py      # Export to .doc format
+└── cache/                   # Temporary file storage
+    └── .gitkeep

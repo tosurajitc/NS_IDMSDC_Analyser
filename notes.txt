@@ -1,0 +1,73 @@
+create virtual environment: python -m venv .venv
+Activate virtual environment: .venv\scripts\activate
+How to activate .env file: pip install python-dotenv then from dotenv import load_dotenv then add this function load_dotenv()  # Load variables from .env into the environment
+Run the requirement.txt file: pip install -r requirements.txt
+create requirement.txt file: pip freeze > requirements.txt
+to run the program : streamlit run main.py
+
+GIT PUSH Steps: 
+In the terminal, initialize a new Git repository: git init
+Add all files in your folder to the staging area: git add .
+Commit the files with a message: git commit -m "Initial commit"
+Link your local repository to the GitHub repository you mentioned: git remote add origin https://github.com/tosurajitc/NS_IDMSDC_Analyser.git
+
+Component Descriptions
+1. Main Application (app.py)
+Streamlit application entry point
+Manages application state and flow
+Coordinates between different components
+
+
+2. Utility Modules (utils/)
+llm_utils.py
+Handles communication with Groq API
+Manages prompt construction and response parsing
+Implements retry logic and error handling
+
+file_utils.py
+Handles file uploads and validation
+Processes IDMS source files
+Manages temporary storage
+
+docx_generator.py
+Converts structured data/markdown to .docx format
+Uses python-docx library
+
+prompt_templates.py
+Contains prompt templates for different operations:
+Business logic extraction
+Test script generation
+
+
+
+3. Model Definitions (models/)
+business_logic.py
+Defines data structure for extracted business logic
+Implements validation and transformation methods
+
+4. UI Components (components/)
+file_uploader.py
+Streamlit component for file uploads
+Validates IDMS file format
+
+logic_extractor.py
+Extracts business logic using LLM
+Displays extraction progress
+
+logic_validator.py
+UI for validating and editing extracted logic
+Structured form for user modifications
+
+test_generator.py
+Generates test scripts based on validated logic
+Shows generation progress
+
+doc_exporter.py
+Allows downloading results as .doc files
+Handles conversion and formatting
+
+Technical Choices
+Streamlit: For rapid UI development
+Groq API: For fast LLM inference with Llama models
+python-docx: For .docx file generation
+pydantic: For data validation and structure
